@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(serial serial.c biblio.c ledrgb.c)
+add_executable(serial serial.c biblio.c ledrgb.c inicializacao.c)
 
 pico_set_program_name(serial "serial")
 pico_set_program_version(serial "0.1")

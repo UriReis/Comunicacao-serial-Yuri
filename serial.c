@@ -9,8 +9,7 @@
 
 
 
-const uint botao_pinA = 5; //Pino respectivo ao botão
-const uint botao_pinB = 6; //Pino respectivo ao botão
+
 
 
 
@@ -19,7 +18,7 @@ int main()
 {
     stdio_init_all();
     pio();
-    ledrgb();
+    inicializacao();
   
 
 
