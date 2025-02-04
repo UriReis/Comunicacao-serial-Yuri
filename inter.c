@@ -4,6 +4,10 @@
 #include "inter.h"
 #include "inicializacao.h"
 
+bool led_onR = false;
+bool led_onY = false;
+bool led_onG = false;
+
 void gpio_irq_handler(uint gpio, uint32_t events)
 {
     // Obtém o tempo atual em microssegundos
@@ -16,6 +20,9 @@ void gpio_irq_handler(uint gpio, uint32_t events)
         if (current_time - last_timeA > 200000)
         { // Debouncing de 200ms
             last_timeA = current_time;
+            led_onG=!led_onG;
+            gpio_put(PIN_G,led_onG);
+
         }
     }
     else if (gpio == botao_pinB) // Verifica se o botão B foi apertado
@@ -23,6 +30,8 @@ void gpio_irq_handler(uint gpio, uint32_t events)
         if (current_time - last_timeB > 200000)
         {
             last_timeB = current_time;
+            led_onY=!led_onY;
+            gpio_put(PIN_Y,led_onY);
             
         }
     }
