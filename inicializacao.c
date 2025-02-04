@@ -5,6 +5,7 @@
 
 
 void inicializacao(){
+    
     // inicialização dos leds rgb:
     gpio_init(PIN_RED);
     gpio_set_dir(PIN_RED, true);

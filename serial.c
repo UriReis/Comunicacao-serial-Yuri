@@ -4,7 +4,8 @@
 #include "hardware/pio.h"
 #include "hardware/timer.h"
 #include "bibliopio.h" // chamada da biblioteca
-#include "ledrgb.h"
+#include "inter.h"
+#include "inicializacao.h"
 
 
 
