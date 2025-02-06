@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(serial serial.c biblio.c inter.c inicializacao.c)
+add_executable(serial serial.c biblio.c inter.c inicializacao.c ssd1306.c)
 
 pico_set_program_name(serial "serial")
 pico_set_program_version(serial "0.1")
@@ -57,6 +57,7 @@ target_include_directories(serial PRIVATE
 target_link_libraries(serial
         pico_stdlib hardware_pio
         hardware_timer
+        hardware_i2c
         
         )
 

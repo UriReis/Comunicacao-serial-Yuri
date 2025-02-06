@@ -107,6 +107,9 @@ void set_one_led(uint8_t r, uint8_t g, uint8_t b, int iterador)
     }
 }
 
+void limpa_led(uint8_t r, uint8_t g, uint8_t b){
+    
+}
 // Inicialização do pio:
 void pio(){
     PIO pio = pio0;

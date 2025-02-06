@@ -6,6 +6,11 @@
 #include "bibliopio.h" // chamada da biblioteca
 #include "inter.h"
 #include "inicializacao.h"
+#include "hardware/i2c.h"
+#include "include/ssd1306.h"
+#include "include/font.h"
+
+
 
 uint8_t led_r = 200; // Intensidade do vermelho
 uint8_t led_g = 0;   // Intensidade do verde
@@ -18,12 +23,18 @@ int main()
     stdio_init_all();
     pio();
     inicializacao();
+    inii2();
+
 
     inter();
 
+    
+
+    
     while (true)
     {
         sleep_ms(1000);
+        
         if (stdio_usb_connected())
         { // Certifica-se de que o USB está conectado
             char tecla;

@@ -2,6 +2,10 @@
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
 #include "inicializacao.h"
+#include "hardware/i2c.h"
+#include "include/ssd1306.h"
+
+
 
 
 void inicializacao(){
@@ -22,5 +26,8 @@ void inicializacao(){
     gpio_init(botao_pinB);
     gpio_set_dir(botao_pinB, GPIO_IN);
     gpio_pull_up(botao_pinB);
+
+
+    
 }
 

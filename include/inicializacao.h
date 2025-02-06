@@ -7,6 +7,9 @@
 #define PIN_G 11
 #define botao_pinA 5 //Pino respectivo ao botão
 #define botao_pinB 6 //Pino respectivo ao botão
+
+
+
 void inicializacao();
 
 
