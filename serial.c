@@ -23,6 +23,7 @@ int main()
     stdio_init_all();
     pio();
     inicializacao();
+    limpa_led();
     inii2();
 
 
@@ -94,6 +95,11 @@ int main()
                 case '9':
                     set_one_led(led_r, led_g, led_b, 9);
 
+                    break;
+
+                case ';':
+                
+                    limpa_led(led_r,led_g, led_r);
                     break;
 
                 default:

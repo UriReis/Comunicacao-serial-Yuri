@@ -108,7 +108,15 @@ void set_one_led(uint8_t r, uint8_t g, uint8_t b, int iterador)
 }
 
 void limpa_led(uint8_t r, uint8_t g, uint8_t b){
-    
+    uint32_t color = urgb_u32(r, g, b);
+
+    // Define todos os LEDs com a cor especificada
+    for (int i = 0; i < NUM_PIXELS; i++)
+    {
+
+      put_pixel(0);  // Desliga os LEDs com zero no buffer
+    }
+
 }
 // Inicialização do pio:
 void pio(){
