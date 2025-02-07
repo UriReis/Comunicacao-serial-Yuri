@@ -154,16 +154,21 @@ void ssd1306_vline(ssd1306_t *ssd, uint8_t x, uint8_t y0, uint8_t y1, bool value
 }
 
 // Função para desenhar um caractere
-void ssd1306_draw_char(ssd1306_t *ssd, char c, uint8_t x, uint8_t y)
+void ssd1306_draw_char(ssd1306_t *ssd, char tecla, uint8_t x, uint8_t y)
 {
   uint16_t index = 0;
-  char ver=c;
-  if (c >= 'A' && c <= 'Z')
+  char ver=tecla;
+  if (tecla >= 'A' && tecla <= 'Z')
   {
-    index = (c - 'A' + 11) * 8; // Para letras maiúsculas
-  }else  if (c >= '0' && c <= '9')
+    index = (tecla - 'A' + 11) * 8; // Para letras maiúsculas
+
+  }else if( tecla >= 'a' && tecla<='z'){
+
+    index = (tecla - 'a' + 37) * 8; // Para letras minusculas
+
+  } else if (tecla >= '0' && tecla <= '9')
   {
-    index = (c - '0' + 1) * 8; // Adiciona o deslocamento necessário
+    index = (tecla - '0' + 1) * 8; // Adiciona o deslocamento necessário
   }
   
   for (uint8_t i = 0; i < 8; ++i)

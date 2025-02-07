@@ -113,3 +113,16 @@ void inii2()
     ssd1306_fill(&ssd, false);
     ssd1306_send_data(&ssd);
 }
+
+
+void display(const char *tecla, int x, int y){
+    
+    ssd1306_draw_string(&ssd, tecla, x,y);
+    ssd1306_send_data(&ssd);
+
+}
+
+void limpadisplay(){
+    ssd1306_fill(&ssd, false); // Limpa o display
+    ssd1306_send_data(&ssd);
+}
