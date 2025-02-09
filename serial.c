@@ -24,6 +24,8 @@ int main()
 
     inter();
 
+    limpadisplay();
+    display("Esperando", 3, 18);
     while (true)
     {
         sleep_ms(1000);
@@ -31,16 +33,17 @@ int main()
         if (stdio_usb_connected())
         { // Certifica-se de que o USB está conectado
             char tecla;
-
+           
             if (scanf("%c", &tecla) == 1)
             { // Lê caractere da entrada padrão
                 printf("Recebido: '%c'\n", tecla);
 
-                char caractere[50];                              // Buffer para o texto a ser exibido
+                char caractere[50]; // Declaração do vetor de texto                           
                 snprintf(caractere, sizeof(caractere), "%c", tecla); // Formata o caractere para ser inserido como texto no display
-                display("ab", 3, 18);
-
+                
+                limpadisplay();
                 display(caractere, 64, 32);
+                
 
                 switch (tecla)
                 {
