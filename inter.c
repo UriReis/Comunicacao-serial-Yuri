@@ -4,6 +4,7 @@
 #include "inter.h"
 #include "inicializacao.h"
 #include "ssd1306.h"
+#include <string.h> // Para usar strlen()
 
 // Definições para o I2C e endereço do display OLED
 #define I2C_PORT i2c1
